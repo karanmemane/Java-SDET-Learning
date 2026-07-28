@@ -1,0 +1,264 @@
+CLASS AND OBJECT IN JAVA
+========================
+
+CLASS:
+------
+- A class is a blueprint or template for creating objects.
+- It is a logical entity that defines the structure (properties/attributes) and behavior (methods) of objects.
+- Classes are declared using the 'class' keyword.
+- A class exists only in code; it is abstract.
+- Example:
+  public class Car {
+      // Attributes
+      String color;
+      String model;
+      
+      // Method
+      void drive() {
+          System.out.println("Car is driving");
+      }
+  }
+
+OBJECT:
+-------
+- An object is an instance of a class.
+- It is a concrete entity created from a class blueprint.
+- Objects are created using the 'new' keyword.
+- Each object has its own state (attribute values) and behavior (methods).
+- Objects occupy memory space when created.
+- Example:
+  Car myCar = new Car(); // Creating an object of Car class
+  myCar.color = "red";
+  myCar.drive();
+
+KEY DIFFERENCES:
+----------------
+1. Class is a logical entity, Object is a physical entity.
+2. Class is declared once, multiple objects can be created from one class.
+3. Class does not occupy memory until an object is created.
+4. Object occupies memory when instantiated.
+5. Class is a template, Object is an instance of that template.
+
+EXAMPLE:
+--------
+public class Animal {
+    String species = "Dog";
+    
+    void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+// Creating objects
+Animal dog1 = new Animal();
+Animal dog2 = new Animal();
+
+// Both are instances of Animal class but separate objects in memory
+
+ACCESS SPECIFIER:
+-----------------
+- Access specifiers determine the visibility of classes, methods, and variables.
+- In Java, there are four access specifiers:
+  1. public: accessible from any other class.
+  2. protected: accessible within the same package and subclasses.
+  3. default (package-private): accessible only within the same package; no keyword.
+  4. private: accessible only within the same class.
+
+Example:
+  public class Example {
+      public int a;
+      protected int b;
+      int c;          // default access
+      private int d;
+  }
+
+Constructors
+------------
+- A constructor is a special method used to initialize new objects.
+- It has the same name as the class and no return type.
+- Constructors are called when an object is created using the 'new' keyword.
+- They can set initial values for attributes and perform setup tasks.
+- Java provides a default constructor if no constructors are defined.
+
+Types of constructors:
+- Default constructor: no parameters.
+- Parameterized constructor: takes parameters to initialize attributes.
+
+Example:
+  public class Person {
+      String name;
+      int age;
+
+      // Default constructor
+      public Person() {
+          String name = "Unknown";
+          int age = 0;
+      }
+
+      // Parameterized constructor
+      public Person(String name, int age) {
+          this.name = name;
+          this.age = age;
+      }
+  }
+
+  Person p1 = new Person();
+  Person p2 = new Person("Alice", 30); 
+
+THIS KEYWORD:
+-------------
+- The 'this' keyword is a reference to the current object.
+- It is used inside a class to refer to the current instance of that class.
+- It helps distinguish between instance variables and local variables with the same name.
+- It can be used to call methods, constructors, and access fields of the current object.
+
+Uses of 'this' keyword:
+1. To refer to instance variables:
+   public class Student {
+       String name;
+       
+       public void setName(String name) {
+           this.name = name;  // 'this.name' refers to instance variable
+       }
+   }
+
+2. To call methods of the current object:
+   public class Car {
+       void start() {
+           System.out.println("Car started");
+       }
+       
+       void drive() {
+           this.start();  // calling start() method of current object
+       }
+   }
+
+3. To pass current object as parameter:
+   public class Circle {
+       void printDetails(Circle c) {
+           // some code
+       }
+       
+       void show() {
+           this.printDetails(this);  // passing current object
+       }
+   }
+
+4. To call constructor from another constructor (constructor chaining):
+   public class Box {
+       int length, width, height;
+       
+       public Box() {
+           this(1, 1, 1);  // calls parameterized constructor
+       }
+       
+       public Box(int l, int w, int h) {
+           length = l;
+           width = w;
+           height = h;
+       }
+   }
+
+5. To return current object:
+   public class Builder {
+       public Builder setColor(String color) {
+           // set color
+           return this;  // returns current object for method chaining
+       }
+   }
+
+What is Object Oriented Programming (OOP)
+-------------------------------
+- Object Oriented Programming (OOP) is a programming paradigm based on the concept of "objects".
+- Objects are instances of classes that bundle data (attributes) and behavior (methods).
+- OOP emphasizes four main principles: encapsulation, inheritance, polymorphism, and abstraction.
+- It helps organize code by modeling real-world entities and their interactions.
+- Java is an object-oriented language that uses classes and objects to structure programs.
+
+The four main principles of OOP are encapsulation, inheritance, polymorphism, and abstraction.
+
+EXPLANATION OF THE FOUR PRINCIPLES OF OOP:
+===========================================
+
+1. ENCAPSULATION:
+-----------------
+- Encapsulation is the bundling of data (variables) and methods (functions) into a single unit called a class.
+- It hides internal details and exposes only necessary information through access specifiers (private, protected, public).
+- It protects data from unauthorized access and modification.
+- Example:
+  public class Account {
+      private double balance;  // hidden from outside
+      
+      public void deposit(double amount) {
+          if (amount > 0) {
+              balance += amount;
+          }
+      }
+      
+      public double getBalance() {
+          return balance;
+      }
+  }
+
+2. INHERITANCE:
+---------------
+- Inheritance allows a class to inherit properties and methods from another class.
+- The class that is inherited from is called the parent class (superclass).
+- The class that inherits is called the child class (subclass).
+- It promotes code reusability and establishes a hierarchical relationship.
+- Example:
+  public class Animal {
+      void eat() {
+          System.out.println("Animal is eating");
+      }
+  }
+  
+  public class Dog extends Animal {
+      void bark() {
+          System.out.println("Dog is barking");
+      }
+  }
+
+3. POLYMORPHISM:
+----------------
+- Polymorphism means "many forms" and allows objects to take multiple forms.
+- It enables a single method to work with different types of objects.
+- Types of polymorphism:
+  a) Compile-time (Method Overloading): Multiple methods with same name but different parameters.
+  b) Runtime (Method Overriding): Subclass provides specific implementation of parent class method.
+- Example:
+  public class Animal {
+      void sound() {
+          System.out.println("Animal makes a sound");
+      }
+  }
+  
+  public class Dog extends Animal {
+      @Override
+      void sound() {
+          System.out.println("Dog barks");
+      }
+  }
+
+4. ABSTRACTION:
+---------------
+- Abstraction is the concept of hiding complex implementation details and showing only essential features.
+- It uses abstract classes and interfaces to define what an object should do.
+- It reduces complexity and increases code maintainability.
+- Example:
+  public abstract class Vehicle {
+      abstract void start();
+      abstract void stop();
+  }
+  
+  public class Car extends Vehicle {
+      @Override
+      void start() {
+          System.out.println("Car is starting");
+      }
+      
+      @Override
+      void stop() {
+          System.out.println("Car is stopping");
+      }
+  }
