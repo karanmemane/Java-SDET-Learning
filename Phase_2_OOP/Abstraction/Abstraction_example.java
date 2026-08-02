@@ -3,7 +3,7 @@ public class Abstracrion_example {
     // abstract class
     abstract class Animal {
         abstract void sound(); // abstract method
-        void eat() { // concrete method
+        void eat() { // concrete method: has an implementation/body in the abstract class
             System.out.println("This animal eats food");        
         }
     }
