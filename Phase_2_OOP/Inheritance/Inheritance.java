@@ -1,3 +1,4 @@
+package Inheritance;
 public class Inheritance {
 
     public static void main(String[] args) {
@@ -12,5 +13,7 @@ public class Inheritance {
         // 1. Public: A public member of a superclass can be accessed by any subclass, regardless of whether it is in the same package or not.
         // 2. Protected: A protected member of a superclass can be accessed by subclasses in the same package or subclasses in different packages.
         // 3. Default (Package-Private): A default member of a superclass can only be accessed by subclasses in the same package.
+
+        
     }
 }
