@@ -1,4 +1,5 @@
-public class Abstracrion_example {
+package Abstraction;
+public class Abstraction_example {
     // abstraction example using abstract class and interface
     // abstract class
     abstract class Animal {
@@ -17,6 +18,9 @@ public class Abstracrion_example {
     class Dog extends Animal {
         void sound() { // implementation of abstract method
             System.out.println("Dog barks");
+        }
+        void eat() { // overriding concrete method
+            System.out.println("Dog eats meat");
         }
     }
 }
