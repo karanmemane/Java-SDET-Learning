@@ -247,7 +247,7 @@ EXPLANATION OF THE FOUR PRINCIPLES OF OOP:
 - It reduces complexity and increases code maintainability.
 - Example:
   public abstract class Vehicle {
-      abstract void start();
+      abstract void  ();
       abstract void stop();
   }
   
@@ -262,3 +262,25 @@ EXPLANATION OF THE FOUR PRINCIPLES OF OOP:
           System.out.println("Car is stopping");
       }
   }
+
+OOP (Object Oriented Programming)  is a programming paradigm that focuses on representing real-world objects and concepts as software objects, which can interact with each other to achieve desired behaviours and functionality.
+Class is a blueprint. Objects are instances of classes.
+Access modifiers are keywords that are used to set the accessibility or visibility of classes, methods, and variables.
+public: A class, method, or variable that is declared public can be accessed from any other class or package.
+private: A method or a variable that is declared private can only be accessed within the same class.
+Encapsulation: the practice of keeping related data and behaviours within a single object or class, and preventing direct access from other objects or classes.
+Inheritance: the mechanism for creating new classes based on existing classes, which allows subclasses to inherit and extend the behaviour of their parent classes.
+Polymorphism: the ability of objects to take on different forms or types, depending on the context in which they are used, often achieved through method overriding or interfaces.
+Method Overriding: A technique in Java where a subclass provides its own implementation of a method that is already defined in its superclass.
+Method Overloading: A technique in Java where a class can have multiple methods with the same name but different parameters.
+Abstraction: a process of hiding the implementation details and showing only relevant functionality to the user, often using abstract classes or interfaces.
+abstract: The abstract keyword is used to declare a class or method that cannot be instantiated on its own, and must be subclassed or implemented by another class. This is partial abstraction since some of the methods can be non-abstract (i.e. already implemented) in the abstract class.
+interface: An interface is a collection of abstract methods and constants that can be implemented by a class to define a specific set of behaviours. This is a complete abstraction since none of the methods are implemented in the interface class.
+To implement an interface in a class, we use implements keyword
+Constructors: Constructors are special methods used to initialize objects, called automatically when an object of a class is created.
+static: Static members are not part of any instance of the class.
+ Static members (variables, methods) belong to the class.
+They can be accessed using class name directly, in other words, there is no need to create instance of the class specifically to use them.
+super: This keyword in Java is a reference variable which is used to refer to an immediate parent class member.
+package: A package is simply a folder that contains one or more Java files.
+Import: To use a class or other type defined in a different package, you must import that package using the import keyword.

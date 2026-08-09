@@ -1,0 +1,30 @@
+```
+Collection Framework:
+- A unified architecture in Java for representing and manipulating collections of objects.
+- Core interfaces: Collection, List, Set, Queue, Deque, Map (Map is separate from Collection but part of the framework).
+- Implementations: ArrayList, LinkedList, HashSet, TreeSet, PriorityQueue, HashMap, etc.
+- Utilities: Collections and Arrays provide algorithms (sort, shuffle, binarySearch, etc.).
+- Benefits: standard API, interoperability, performance-tuned implementations, and utility helpers.
+
+How List works:
+- List is an ordered collection (allows positional access and insertion) and permits duplicates.
+- Common implementations:
+	- ArrayList: backed by a resizable array. Fast random access (O(1)), slower inserts/removes in middle (O(n)). Amortized O(1) for add at end.
+	- LinkedList: doubly-linked nodes. Fast inserts/removes at ends or when you have the node (O(1)), but slower random access (O(n)). Implements Deque as well.
+- Key operations:
+	- add(element) / add(index, element)
+	- get(index), set(index, element)
+	- remove(index) / remove(object)
+	- size(), isEmpty(), contains(object)
+	- iterator() and listIterator() for traversal (listIterator supports bidirectional traversal and modification).
+- Choosing implementation:
+	- Use ArrayList when you need fast random access and iteration.
+	- Use LinkedList when frequent insertions/removals from middle or ends are required and random access is rare.
+
+Example (ArrayList):
+	List<String> list = new ArrayList<>();
+	list.add("a");
+	list.add(0, "b"); // insert at index
+	String s = list.get(1);
+
+```
