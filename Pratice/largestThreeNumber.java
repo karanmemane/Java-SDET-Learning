@@ -18,5 +18,6 @@ public class largestThreeNumber {
         } else {
             System.out.println("Largest number is: " + c);
         }
+        sc.close();
     }
 }
